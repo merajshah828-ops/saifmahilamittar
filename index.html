@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Noor — My Mahila Mittar 🐾</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9ad5, #ffd6eb);
+    overflow-x: hidden;
+    color: #2b0035;
+    transition: background 0.5s ease;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    margin: 0 0 20px 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    padding: 30px;
+    max-width: 420px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.2);
+    animation: fadeIn 1s ease;
+    z-index: 10;
+    position: relative;
+}
+
+.btn {
+    margin-top: 20px;
+    background: #ff3ea8;
+    border: none;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #ff1a95;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn.secondary {
+    background: #ffd6eb;
+    color: #ff3ea8;
+}
+
+.btn.secondary:hover {
+    background: #ffc2e0;
+}
+
+img.gif {
+    width: 100%;
+    border-radius: 18px;
+    margin: 15px 0;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* Audio Player Styles - Only on welcome page */
+.audio-player {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 2px solid #ff3ea8;
+}
+
+audio {
+    width: 100%;
+    border-radius: 50px;
+}
+
+audio::-webkit-media-controls-panel {
+    background: linear-gradient(45deg, #ffd6eb, #ff9ad5);
+    border-radius: 50px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    5% { transform: scale(1.1); }
+    10% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Welcome Page Styles */
+#welcome-page {
+    background: linear-gradient(135deg, #9c27b0, #673ab7);
+}
+
+.headphone-icon {
+    font-size: 80px;
+    color: #ff3ea8;
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 30px rgba(255, 62, 168, 0.5);
+}
+
+.experience-text {
+    background: linear-gradient(45deg, #ff3ea8, #ff9800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+.music-note {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 24px;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Countdown Page Styles */
+#countdown-page {
+    background: linear-gradient(135deg, #ff6bcb, #ffa8e4);
+}
+
+.countdown-display {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ff3ea8;
+    text-shadow: 3px 3px 0 #ffd6eb;
+    margin: 30px 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 5px;
+}
+
+.countdown-label {
+    font-size: 1.5rem;
+    color: #2b0035;
+    margin-bottom: 40px;
+}
+
+/* Birthday Announcement Page */
+#birthday-announcement {
+    background: linear-gradient(135deg, #ffd3b6, #ffaaa5);
+}
+
+.cute-message {
+    font-size: 1.8rem;
+    color: #ff3ea8;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.heart {
+    color: #ff4081;
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+.you-text {
+    font-size: 2.2rem;
+    color: #9c27b0;
+    font-weight: bold;
+    margin: 15px 0;
+    text-shadow: 2px 2px 0 #ffd6eb;
+}
+
+/* Balloons Page Styles */
+#balloons-page {
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+}
+
+.balloons-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    pointer-events: auto;
+    z-index: 5;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon:nth-child(odd) {
+    animation-duration: 7s;
+}
+
+.balloon:nth-child(3n) {
+    animation-duration: 5.5s;
+}
+
+.balloon-string {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background-color: #aaa;
+    transform: translateX(-50%);
+}
+
+.message-card {
+    position: absolute;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 20;
+    max-width: 300px;
+    animation: fadeIn 0.5s ease;
+    display: none;
+}
+
+.close-message {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ff3ea8;
+}
+
+/* Letter Page */
+#letter-page {
+    background: linear-gradient(135deg, #a8d8ea, #aa96da);
+}
+
+.letter {
+    background: #fff9fb;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+    line-height: 1.8;
+    border-left: 8px solid #ff3ea8;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 30px;
+    color: #ff3ea8;
+    font-weight: bold;
+}
+
+/* Final Page */
+#final-page {
+    background: linear-gradient(135deg, #ffaaa5, #ffd3b6);
+}
+
+/* Navigation Dots */
+.nav-dots {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #ff3ea8;
+    transform: scale(1.3);
+}
+
+/* Progress Bar */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 100;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #ff3ea8;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .countdown-display {
+        font-size: 3.5rem;
+    }
+    
+    .card {
+        margin: 20px;
+        padding: 25px;
+    }
+    
+    .nav-dots {
+        right: 10px;
+    }
+    
+    .cute-message {
+        font-size: 1.5rem;
+    }
+    
+    .you-text {
+        font-size: 1.8rem;
+    }
+    
+    .headphone-icon {
+        font-size: 60px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="nav-dots"></div>
+
+    <!-- WELCOME PAGE -->
+    <section id="welcome-page">
+        <div class="card">
+            <h1>Welcome, My Mahila Mittar! 🎀</h1>
+            <div class="headphone-icon">
+                <i class="fas fa-headphones-alt"></i>
+            </div>
+            <p class="experience-text">For the best experience, use headphones 🎧</p>
+            <p>This special birthday journey is crafted with love just for you, Noor! Get ready for some magic, memories, and lots of love.</p>
+            
+            <!-- Simple Audio Player -->
+            <div class="audio-player">
+                <audio controls>
+                    <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+                    <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            
+            <p><small>Click play to start the birthday music! Let it play throughout your journey for maximum magic!</small></p>
+            <button class="btn" onclick="go(2)">
+                <i class="fas fa-play-circle"></i> Let's Begin!
+            </button>
+        </div>
+        
+        <!-- Floating music notes -->
+        <div class="music-note" style="left: 15%; top: 20%;">♪</div>
+        <div class="music-note" style="right: 20%; top: 30%;">♫</div>
+        <div class="music-note" style="left: 25%; bottom: 25%;">♬</div>
+        <div class="music-note" style="right: 15%; bottom: 35%;">♪</div>
+    </section>
+
+    <!-- COUNTDOWN PAGE -->
+    <section id="countdown-page" style="display: none;">
+        <div class="card">
+            <h1>Get Ready, Mahila Mittar! 🎉</h1>
+            <p>Crafting your special moment in...</p>
+            <div class="countdown-display" id="countdown">10</div>
+            <p class="countdown-label">seconds</p>
+            <p>A little surprise awaits... with lots of love! <span class="heart">💖</span></p>
+        </div>
+    </section>
+
+    <!-- BIRTHDAY ANNOUNCEMENT PAGE -->
+    <section id="birthday-announcement" style="display: none;">
+        <div class="card">
+            <h2>Guess what? 🎊</h2>
+            <img class="gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDNnYmRsdHJjMXF4OThhZW9jZzAzbnptcXNlaWZhMHc3ZGEyMWc5NCZlcD12MV9pbnRlbm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" alt="Cute birthday celebration">
+            <p class="cute-message">A mahila mittar was born today, 17 years ago!</p>
+            <p class="you-text">Yes, it's YOU! 🥳</p>
+            <p>My favorite person turns 17 today! Ready for some birthday magic?</p>
+            <button class="btn" onclick="go(4)">
+                <i class="fas fa-gift"></i> Start the Surprise!
+            </button>
+        </div>
+    </section>
+
+    <!-- BALLOONS PAGE -->
+    <section id="balloons-page" style="display: none;">
+        <div class="card">
+            <h2>Pop the Balloons! 🎈</h2>
+            <p>Each balloon has a special message for you, my mahila mittar Noor!</p>
+            <p><small>Click on each balloon to reveal its message</small></p>
+            <button class="btn" onclick="go(5)">Next ➜</button>
+        </div>
+        
+        <!-- Balloons Container -->
+        <div class="balloons-container" id="balloons-container"></div>
+        
+        <!-- Message Cards (initially hidden) -->
+        <div class="message-card" id="message1">
+            <span class="close-message" onclick="closeMessage(1)">×</span>
+            <h3>Message #1</h3>
+            <p>Happy 17th Birthday, Noor! 🎂 You're officially more awesome than ever!</p>
+        </div>
+        
+        <div class="message-card" id="message2">
+            <span class="close-message" onclick="closeMessage(2)">×</span>
+            <h3>Message #2</h3>
+            <p>You are the longest and bestest online friends I have ever had 💕</p>
+        </div>
+        
+        <div class="message-card" id="message3">
+            <span class="close-message" onclick="closeMessage(3)">×</span>
+            <h3>Message #3</h3>
+            <p>To think, you were the one who was there when I felt alone 😔</p>
+        </div>
+        
+        <div class="message-card" id="message4">
+            <span class="close-message" onclick="closeMessage(4)">×</span>
+            <h3>Message #4</h3>
+            <p>I will and always adore you from distance (I hate this distance) 🌙</p>
+        </div>
+        
+        <div class="message-card" id="message5">
+            <span class="close-message" onclick="closeMessage(5)">×</span>
+            <h3>Message #5</h3>
+            <p> Thank you for being my person for whole year! 👭</p>
+        </div>
+        
+        <div class="message-card" id="message6">
+            <span class="close-message" onclick="closeMessage(6)">×</span>
+            <h3>Message #6</h3>
+            <p>I would loveeeee to sayyyy today is your birthhdayyyy Happy birthday🎉🎂🎂🎂🎂</p>
+        </div>
+    </section>
+
+    <section id="letter-page" style="display: none;">
+  <div class="card">
+    <h2>A Letter for My Mahila Mittar 💌</h2>
+    <div class="letter">
+      <h3>Dear Noor,</h3>
+      <p>Happy 17th Birthday, my bestie! 🎂</p>
+      
+      <p><i>The kashmiri queen 🤭<br>
+      Noor Kokab, oh so bright ✨<br>
+      Like her name, light in darkest night<br>
+      A beauty that's more than skin deep <br>
+      A heart that's sweet, a soul that keeps<br>
+      Her goofy side – my favorite part <br>
+      Makes me laugh, captures my heart<br>
+      Caring eyes that see the best <br>
+      In everyone, she passes the test<br>
+      But beware, she's a baka too ✨<br>
+      Will tease and joke, and see you through<br>
+      So here's to Noor, on her special day <br>
+      May it be as bright as she is in every way<br>
+      HAPPY BIRTHDAY TO YOU NOOR !!! 🎉🎉🎉</i></p>
+
+      <div class="signature">
+        With all my love,<br>
+        Your bestie for restie 💝
+      </div>
+    </div>
+    <button class="btn" onclick="go(6)">Final Page ➜</button>
+  </div>
+</section>
+
+
+    <!-- FINAL PAGE -->
+    <section id="final-page" style="display: none;">
+        <div class="card">
+            <h1>Happy 17th Birthday Noor! 🎂</h1>
+            <img class="gif" src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyM3NnaTY5cjZ5M2t1dmkzYzA0eTU1bm9tZDB4eWdzdzJ3aW0xaWc1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4FGuaSEpfDmJSwg0/giphy.gif" alt="Birthday celebration">
+            
+            <p>May Allah bless you with endless happiness, success in everything you do, and a life filled with love and laughter. Here's to many more years of friendship! 💖</p>
+            <p><b>— Your bestie for restie </b></p>
+            <button class="btn secondary" onclick="go(1)"> Start Over</button>
+        </div>
+    </section>
+
+<script>
+// Page navigation
+const totalPages = 6;
+let currentPage = 1;
+
+// Initialize navigation dots
+const navDots = document.getElementById('nav-dots');
+for (let i = 1; i <= totalPages; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    dot.id = `dot-${i}`;
+    dot.onclick = () => go(i);
+    navDots.appendChild(dot);
+}
+
+// Update progress bar
+function updateProgress() {
+    const progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+    document.getElementById('progress-bar').style.width = `${progress}%`;
+}
+
+// Get page ID
+function getPageId(pageNum) {
+    const pageNames = ['', 'welcome-page', 'countdown-page', 'birthday-announcement', 'balloons-page', 'letter-page', 'final-page'];
+    return pageNames[pageNum];
+}
+
+// Go to specific page
+function go(pageNum) {
+    // Hide all pages
+    for (let i = 1; i <= totalPages; i++) {
+        const page = document.getElementById(getPageId(i));
+        if (page) page.style.display = 'none';
+    }
+    
+    // Show target page
+    const targetPage = document.getElementById(getPageId(pageNum));
+    if (targetPage) {
+        targetPage.style.display = 'flex';
+    }
+    
+    // Update current page and active dot
+    currentPage = pageNum;
+    updateActiveDot();
+    updateProgress();
+    
+    // Special setup for certain pages
+    if (pageNum === 2) {
+        startCountdown();
+    } else if (pageNum === 4) {
+        createBalloons();
+    }
+}
+
+// Update active navigation dot
+function updateActiveDot() {
+    for (let i = 1; i <= totalPages; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (dot) {
+            dot.classList.toggle('active', i === currentPage);
+        }
+    }
+}
+
+// COUNTDOWN FUNCTIONALITY
+let countdownValue = 10;
+let countdownInterval;
+
+function startCountdown() {
+    countdownValue = 10;
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.textContent = countdownValue;
+    
+    clearInterval(countdownInterval);
+    
+    countdownInterval = setInterval(() => {
+        countdownValue--;
+        countdownElement.textContent = countdownValue;
+        
+        if (countdownValue <= 0) {
+            clearInterval(countdownInterval);
+            // Automatically go to birthday announcement page after countdown
+            setTimeout(() => go(3), 500);
+        }
+    }, 1000);
+}
+
+// BALLOONS FUNCTIONALITY
+function createBalloons() {
+    const container = document.getElementById('balloons-container');
+    container.innerHTML = '';
+    
+    const messages = [
+        "Happy 17th Birthday, Noor! 🎂 You're officially more awesome than ever!",
+        "You are the longest and bestest online friends I have ever had 💕",
+        "To think, you were the one who was there when I felt alone 😔",
+        "I will and always adore you from distance (I hate this distance) 🌙",
+        " Thank you for being my person for whole year! 👭",
+        "I'm so proud to call you my best friend! ✨",
+        "Your smile can light up the darkest room. Never stop shining, mahila mittar! ✨",
+        "I would loveeeee to sayyyy today is your birthhdayyyy Happy birthday🎉🎂🎂🎂🎂"
+    ];
+    
+    const colors = ['#ff4081', '#9c27b0', '#ff9800', '#4caf50', '#2196f3', '#ffeb3b', '#e91e63', '#00bcd4'];
+    
+    // Create balloons
+    messages.forEach((message, index) => {
+        setTimeout(() => {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            
+            // Random position
+            const left = 10 + (Math.random() * 80);
+            const top = 20 + (Math.random() * 60);
+            
+            balloon.style.left = `${left}%`;
+            balloon.style.top = `${top}%`;
+            balloon.style.backgroundColor = colors[index % colors.length];
+            
+            // Add string
+            const string = document.createElement('div');
+            string.className = 'balloon-string';
+            balloon.appendChild(string);
+            
+            // Add click event
+            balloon.addEventListener('click', () => {
+                // Pop animation
+                balloon.style.animation = 'pop 0.5s forwards';
+                
+                // Show message after a short delay
+                setTimeout(() => {
+                    showMessage(index + 1, message);
+                }, 300);
+            });
+            
+            container.appendChild(balloon);
+        }, index * 300);
+    });
+}
+
+function showMessage(messageNum, messageText) {
+    // Hide all messages first
+    for (let i = 1; i <= 8; i++) {
+        const msg = document.getElementById(`message${i}`);
+        if (msg) msg.style.display = 'none';
+    }
+    
+    // Show the specific message
+    const messageCard = document.getElementById(`message${messageNum}`);
+    if (messageCard) {
+        // Update message text if needed
+        if (messageCard.querySelector('p')) {
+            messageCard.querySelector('p').textContent = messageText;
+        }
+        
+        // Position it randomly
+        const left = 10 + (Math.random() * 70);
+        const top = 20 + (Math.random() * 60);
+        
+        messageCard.style.left = `${left}%`;
+        messageCard.style.top = `${top}%`;
+        messageCard.style.display = 'block';
+    }
+}
+
+function closeMessage(messageNum) {
+    const messageCard = document.getElementById(`message${messageNum}`);
+    if (messageCard) {
+        messageCard.style.display = 'none';
+    }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    go(1); // Start with welcome page
+    updateActiveDot();
+});
+</script>
+</body>
+</html>
