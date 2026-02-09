@@ -396,9 +396,9 @@ audio::-webkit-media-controls-panel {
             
             <!-- Simple Audio Player -->
             <audio controls>
-  <source src="audio/music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+                <source src="audio/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
             
             <p><small>Click play to start the birthday music! Let it play throughout your journey for maximum magic!</small></p>
             <button class="btn" onclick="go(2)">
@@ -453,72 +453,71 @@ audio::-webkit-media-controls-panel {
         <!-- Message Cards (initially hidden) -->
         <div class="message-card" id="message1">
             <span class="close-message" onclick="closeMessage(1)">×</span>
-            <h3>Message #1</h3>
-            <p>Happy 17th Birthday, Noor! 🎂 You're officially more awesome than ever!</p>
+            <h3>Balloon Message #1</h3>
+            <p>Loading message...</p>
         </div>
         
         <div class="message-card" id="message2">
             <span class="close-message" onclick="closeMessage(2)">×</span>
-            <h3>Message #2</h3>
-            <p>You are the longest and bestest online friends I have ever had 💕</p>
+            <h3>Balloon Message #2</h3>
+            <p>Loading message...</p>
         </div>
         
         <div class="message-card" id="message3">
             <span class="close-message" onclick="closeMessage(3)">×</span>
-            <h3>Message #3</h3>
-            <p>To think, you were the one who was there when I felt alone 😔</p>
+            <h3>Balloon Message #3</h3>
+            <p>Loading message...</p>
         </div>
         
         <div class="message-card" id="message4">
             <span class="close-message" onclick="closeMessage(4)">×</span>
-            <h3>Message #4</h3>
-            <p>I will and always adore you from distance (I hate this distance) 🌙</p>
+            <h3>Balloon Message #4</h3>
+            <p>Loading message...</p>
         </div>
         
         <div class="message-card" id="message5">
             <span class="close-message" onclick="closeMessage(5)">×</span>
-            <h3>Message #5</h3>
-            <p> Thank you for being my person for whole year! 👭</p>
+            <h3>Balloon Message #5</h3>
+            <p>Loading message...</p>
         </div>
         
         <div class="message-card" id="message6">
             <span class="close-message" onclick="closeMessage(6)">×</span>
-            <h3>Message #6</h3>
-            <p>I would loveeeee to sayyyy today is your birthhdayyyy Happy birthday🎉🎂🎂🎂🎂</p>
+            <h3>Balloon Message #6</h3>
+            <p>Loading message...</p>
         </div>
     </section>
 
     <section id="letter-page" style="display: none;">
-  <div class="card">
-    <h2>A Letter for My Mahila Mittar 💌</h2>
-    <div class="letter">
-      <h3>Dear Noor,</h3>
-      <p>Happy 17th Birthday, my bestie! 🎂</p>
-      
-      <p><i>The kashmiri queen 🤭<br>
-      Noor Kokab, oh so bright ✨<br>
-      Like her name, light in darkest night<br>
-      A beauty that's more than skin deep <br>
-      A heart that's sweet, a soul that keeps<br>
-      Her goofy side – my favorite part <br>
-      Makes me laugh, captures my heart<br>
-      Caring eyes that see the best <br>
-      In everyone, she passes the test<br>
-      But beware, she's a baka too ✨<br>
-      Will tease and joke, and see you through<br>
-      So here's to Noor, on her special day <br>
-      May it be as bright as she is in every way<br>
-      HAPPY BIRTHDAY TO YOU NOOR !!! 🎉🎉🎉</i></p>
+        <div class="card">
+            <h2>A Letter for My Mahila Mittar 💌</h2>
+            <div class="letter">
+                <h3>Dear Noor,</h3>
+                <p>Happy 17th Birthday, my bestie! 🎂</p>
+                
+                <p><i>The kashmiri queen 🤭<br>
+                Noor Kokab, oh so bright ✨<br>
+                Like her name, light in darkest night<br>
+                A beauty that's more than skin deep <br>
+                A heart that's sweet, a soul that keeps<br>
+                Her goofy side – my favorite part <br>
+                Makes me laugh, captures my heart<br>
+                Caring eyes that see the best <br>
+                In everyone, she passes the test<br>
+                But beware, she's a baka too ✨<br>
+                Will tease and joke, and see you through<br>
+                So here's to Noor, on her special day <br>
+                May it be as bright as she is in every way<br>
+                HAPPY BIRTHDAY TO YOU NOOR !!! 🎉🎉🎉</i></p>
 
-      <div class="signature">
-        With all my love,<br>
-        Your bestie for restie 💝
-      </div>
-    </div>
-    <button class="btn" onclick="go(6)">Final Page ➜</button>
-  </div>
-</section>
-
+                <div class="signature">
+                    With all my love,<br>
+                    Your bestie for restie 💝
+                </div>
+            </div>
+            <button class="btn" onclick="go(6)">Final Page ➜</button>
+        </div>
+    </section>
 
     <!-- FINAL PAGE -->
     <section id="final-page" style="display: none;">
@@ -619,26 +618,24 @@ function startCountdown() {
     }, 1000);
 }
 
-// BALLOONS FUNCTIONALITY
+// BALLOONS FUNCTIONALITY - UPDATED MESSAGES ARRAY
+const messages = [
+    "Happy 17th Birthday, Noor! 🎂 You're officially more awesome than ever!",
+    "You are the longest and bestest online friends I have ever had 💕",
+    "To think, you were the one who was there when I felt alone 😔",
+    "I will and always adore you from distance (I hate this distance) 🌙",
+    "Your smile can light up the darkest room. Never stop shining, mahila mittar! ✨",
+    "I would loveeeee to sayyyy today is your birthhdayyyy Happy birthday🎉🎂🎂🎂🎂"
+];
+
 function createBalloons() {
     const container = document.getElementById('balloons-container');
     container.innerHTML = '';
     
-    const messages = [
-        "Happy 17th Birthday, Noor! 🎂 You're officially more awesome than ever!",
-        "You are the longest and bestest online friends I have ever had 💕",
-        "To think, you were the one who was there when I felt alone 😔",
-        "I will and always adore you from distance (I hate this distance) 🌙",
-        " Thank you for being my person for whole year! 👭",
-        "I'm so proud to call you my best friend! ✨",
-        "Your smile can light up the darkest room. Never stop shining, mahila mittar! ✨",
-        "I would loveeeee to sayyyy today is your birthhdayyyy Happy birthday🎉🎂🎂🎂🎂"
-    ];
+    const colors = ['#ff4081', '#9c27b0', '#ff9800', '#4caf50', '#2196f3', '#ffeb3b'];
     
-    const colors = ['#ff4081', '#9c27b0', '#ff9800', '#4caf50', '#2196f3', '#ffeb3b', '#e91e63', '#00bcd4'];
-    
-    // Create balloons
-    messages.forEach((message, index) => {
+    // Create exactly 6 balloons for 6 messages
+    for (let i = 0; i < 6; i++) {
         setTimeout(() => {
             const balloon = document.createElement('div');
             balloon.className = 'balloon';
@@ -649,7 +646,7 @@ function createBalloons() {
             
             balloon.style.left = `${left}%`;
             balloon.style.top = `${top}%`;
-            balloon.style.backgroundColor = colors[index % colors.length];
+            balloon.style.backgroundColor = colors[i % colors.length];
             
             // Add string
             const string = document.createElement('div');
@@ -663,18 +660,18 @@ function createBalloons() {
                 
                 // Show message after a short delay
                 setTimeout(() => {
-                    showMessage(index + 1, message);
+                    showMessage(i + 1, messages[i]);
                 }, 300);
             });
             
             container.appendChild(balloon);
-        }, index * 300);
-    });
+        }, i * 300);
+    }
 }
 
 function showMessage(messageNum, messageText) {
     // Hide all messages first
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 6; i++) {
         const msg = document.getElementById(`message${i}`);
         if (msg) msg.style.display = 'none';
     }
@@ -682,9 +679,16 @@ function showMessage(messageNum, messageText) {
     // Show the specific message
     const messageCard = document.getElementById(`message${messageNum}`);
     if (messageCard) {
-        // Update message text if needed
-        if (messageCard.querySelector('p')) {
-            messageCard.querySelector('p').textContent = messageText;
+        // Update message text
+        const paragraph = messageCard.querySelector('p');
+        if (paragraph) {
+            paragraph.textContent = messageText;
+        }
+        
+        // Also update the title
+        const title = messageCard.querySelector('h3');
+        if (title) {
+            title.textContent = `Balloon Message #${messageNum}`;
         }
         
         // Position it randomly
